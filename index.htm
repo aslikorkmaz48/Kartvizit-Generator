@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartvizit Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-neutral-900 min-h-screen flex flex-col items-center justify-center text-white p-6">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl w-full">
+
+        <!-- Form -->
+        <div class="bg-neutral-800/50 p-6 rounded-xl backdrop-blur border border-white/20">
+            <h2 class="text-2xl font-semibold mb-4">Kartvizit Bilgileri</h2>
+            <div class="flex flex-col gap-3">
+                <input id="name" placeholder="Ad Soyad" class="input-field" />
+                <input id="role" placeholder="Meslek" class="input-field" />
+                <input id="email" placeholder="E-posta" class="input-field" />
+                <input id="phone" placeholder="Telefon" class="input-field" />
+                <input id="website" placeholder="Web site" class="input-field" />
+                <input id="linkedin" placeholder="LinkedIn" class="input-field" />
+                <input id="github" placeholder="GitHub" class="input-field" />
+
+                <label class="mt-3 font-semibold">Tema Seçimi</label>
+                <select id="theme" class="input-field">
+          <option value="berry">Berry Sunset</option>
+          <option value="ocean">Ocean Breeze</option>
+          <option value="slate">Slate Minimal</option>
+        </select>
+
+                <div class="flex gap-2 mt-4">
+                    <button id="downloadPng" class="btn btn-png">PNG İndir</button>
+                    <button id="downloadPdf" class="btn btn-pdf">PDF İndir</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kartvizit Önizleme -->
+        <div class="flex justify-center items-center">
+            <div id="card" class="card">
+                <div id="avatar" class="avatar">A</div>
+                <h3 id="cardName" class="card-name">Ad Soyad</h3>
+                <p id="cardRole" class="card-role">Meslek</p>
+                <p id="cardEmail" class="card-email mt-1">E-posta</p>
+                <p id="cardPhone" class="card-phone">Telefon</p>
+                <p id="cardWebsite" class="card-website">Web site</p>
+                <div class="flex gap-2 mt-2" id="socialLinks">
+                    <a id="cardLinkedIn" href="#" class="social-link">LinkedIn</a>
+                    <a id="cardGitHub" href="#" class="social-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
